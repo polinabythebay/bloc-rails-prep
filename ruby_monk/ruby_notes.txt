@@ -1,0 +1,106 @@
+Ruby notes:
+
+object oriented language
+
+To know which object you are, use "self"
+
+If you don't specify which object you are, you automatically are the 'main' object Ruby provides by default
+
+Invoking a method on an object generates a response, which is always another object
+
+2.even?
+true
+
+#get list of all methods for an object
+
+1.methods.sort
+
+This is also possible:
+
+4.+(3)
+
+Ruby makes an exception in its syntactic rules for commonly used oeprators so you don't have to use periods to invoke them on objects. 
+
+[] also doesn't require a period, and encloses the argument to itself. 
+
+words = ["foo", "bar", "baz"]
+words[1] or words.[](1)
+> bar
+
+Common pattern in ruby: two different ways to do the same thing where one remains consistent and the other changes the syntax to be more programmer friendly. 
+
+String constructions are in literal form. The interpreter treats anything in quotes as a string.
+Strings are instances of Ruby string class. 
+
+Most commonly used string methods:
+
+Length
+Interpolation
+Search
+Manipulate casing within strings
+Splitting 
+Concatenating
+Searching and replacing
+
+"Rubymonk".length
+
+String interpolation: replace placeholders within a string with values they represent.
+
+
+a = 1
+b = 4
+puts "The number #{a} is less than #{b}"
+
+Anything can be evaluated in a placeholder, not just variables.
+A String literal created with single quotes does not support interpolation.
+Double quotes allow for escape sequences, single quotes do not. ex. "\n" is new line. 
+
+Search:
+
+"[Luke:] I can’t believe it. [Yoda:] That is why you fail.".include?("Yoda")
+True
+"Ruby is a beautiful language".start_with?("Ruby")
+"I can't work with any other language but Ruby".end_with?("Ruby")
+"I am a Rubyist".index("R")
+
+It is conventional in Ruby to have '?' at the end of the method if that method returns only boolean values.
+	Though it is not mandated by the syntax, this practice is highly recommended as it increases the readability of code.
+
+puts 'i am in lowercase'.upcase
+puts 'This is Mixed CASE'.downcase
+'Fear is the path to the dark side'.split(" ")
+
+-- You can effectively manipulate strings be combining String#split and regular expressions
+
+Literal and expressive method for string concatenation:
+'ruby'+'monk'
+"Ruby".concat("Monk")
+
+You can use '<<' just like '+', but in this case the String object 'Monk' will be appended to the object represented by 'Ruby' itself. In the first case of using '+', the original string is not modified, as a third string 'RubyMonk' is created. This can make a huge difference in your memory utilization, if you are doing really large scale string manipulations. 
+
+#replaces first occurance of 'I'
+"I should look into your problem when I get time".sub('I','We')
+#replaces all occurances of 'I'
+"I should look into your problem when I get time".gsub('I','We')
+
+RegEx
+#replaces all vowels with 1
+'RubyMonk'.gsub(/[aeiou]/,'1')
+#find chars of a string which are next to a whitespace
+#will only return first match
+'RubyMonk Is Pretty Brilliant'.match(/ ./)
+
+Boolean Expressions
+
+
+
+
+
+
+
+
+
+
+
+
+
